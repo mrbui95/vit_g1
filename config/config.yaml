@@ -1,0 +1,26 @@
+#model:
+#  name: vit_small_patch16_224
+#  pretrained: true
+#  num_classes: 3
+#  checkpoint:
+#    path: ./checkpoints/result/checkpoint_contrastive_small.pth
+
+model:
+  name: vit_base_patch16_224
+  pretrained: true
+  num_classes: 3
+  checkpoint:
+    path: ./checkpoints/result/checkpoint_contrastive_cosin.pth
+
+
+train:
+  batch_size: 32
+  lr: 1e-5
+  epochs: 10
+  device: cuda
+
+dataset:
+  name: COVID19
+  root: ./data/raw
+  train_root: ./data/train
+  validation_root: ./data/validation
